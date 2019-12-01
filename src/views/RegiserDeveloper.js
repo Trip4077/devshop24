@@ -3,16 +3,16 @@ import { registerDev } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { blankDeveloperForm, handleChange, handleChangeCheckbox, handleSubmit } from '../components/forms/formHandlers';
 
-const RegisterDeveloper = () => {
+const RegisterDeveloper = props => {
   const [ formVals, setFormVals ] = useState(blankDeveloperForm);
   const err = useSelector(state => state.devReducer.err);
   const dispatch = useDispatch();
-
+  
   return(
     <div>
       Register As A Developer
 
-      <form onSubmit={e => handleSubmit(e, formVals, registerDev, dispatch)}>
+      <form onSubmit={e => handleSubmit(e, formVals, registerDev, dispatch, props.history, err)}>
 
         {
           err ? <p>{err.response.data.detail}</p> : null
