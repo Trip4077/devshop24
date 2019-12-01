@@ -15,7 +15,8 @@ export const devReducer = (state = initialState, action) => {
     case REGISTER_DEV:
       return {
         ...state,
-        developer: action.payload
+        developer: action.payload,
+        err: null
       }
 
     case REGISTER_ERROR:
