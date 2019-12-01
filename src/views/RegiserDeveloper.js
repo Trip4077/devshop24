@@ -30,6 +30,7 @@ const RegisterDeveloper = props => {
                 value={ formVals.first_name }
                 onChange={e => handleChange(e, formVals, setFormVals)}
                 type='text'
+                required
         />
 
         <label>Last Name:</label>
@@ -37,13 +38,15 @@ const RegisterDeveloper = props => {
                 value={ formVals.last_name }
                 onChange={e => handleChange(e, formVals, setFormVals)}
                 type='text'
+                required
         />
 
         <label>Email:</label>
         <input  name='email'
                 value={ formVals.email }
                 onChange={e => handleChange(e, formVals, setFormVals)}
-                type='text'
+                type='email'
+                required
         />
 
         <label>Password:</label>
@@ -51,6 +54,8 @@ const RegisterDeveloper = props => {
                 value={ formVals.password }
                 onChange={e => handleChange(e, formVals, setFormVals)}
                 type='text'
+                required
+                minlength="6"
         />
 
         <label>Phone:</label>
@@ -58,6 +63,7 @@ const RegisterDeveloper = props => {
                 value={ formVals.phone }
                 onChange={e => handleChange(e, formVals, setFormVals)}
                 type='text'
+                required
         />
 
         <label>Location:</label>

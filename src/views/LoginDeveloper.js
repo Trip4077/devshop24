@@ -29,12 +29,14 @@ const LoginDeveloper = props => {
                 value={ loginVals.email }
                 onChange={e => handleChange(e, loginVals, setLoginVals)}
                 type='text'
+                required
         />
 
         <input  name='password'
                 value={ loginVals.password }
                 onChange={e => handleChange(e, loginVals, setLoginVals)}
                 type='text'
+                required
         />
 
         <button type='submit'>Login</button>
