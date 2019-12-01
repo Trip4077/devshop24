@@ -6,7 +6,6 @@ import { blankLoginForm, handleChange, handleSubmit } from '../components/forms/
 const LoginDeveloper = props => {
   const [ loginVals, setLoginVals ] = useState(blankLoginForm);
   const err = useSelector(state => state.devReducer.err);
-  const dev = useSelector(state => state.devReducer.developer);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ const LoginDeveloper = props => {
     <div>
       Login As A Developer
 
-      <form onSubmit={e => handleSubmit(e, loginVals, loginDev, dispatch, props.history)}>
+      <form onSubmit={e => handleSubmit(e, loginVals, loginDev, dispatch)}>
         
         {
           err ? <p>{err.response.data.err}</p> : null

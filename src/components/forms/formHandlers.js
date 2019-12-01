@@ -61,3 +61,12 @@ export const blankLoginForm = {
   email: "",
   password: ""
 }
+
+export const blankClientForm = {
+    "email": "",
+    "first_name": "",
+    "last_name": "",
+    "company": "",
+    "phone": "",
+    "password": ""
+}

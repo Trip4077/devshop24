@@ -19,7 +19,7 @@ const RegisterDeveloper = props => {
     <div>
       Register As A Developer
 
-      <form onSubmit={e => handleSubmit(e, formVals, registerDev, dispatch, props.history, err)}>
+      <form onSubmit={e => handleSubmit(e, formVals, registerDev, dispatch)}>
 
         {
           err ? <p>{err.response.data.detail}</p> : null
