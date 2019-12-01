@@ -8,11 +8,10 @@ const RegisterDeveloper = () => {
   const err = useSelector(state => state.devReducer.err);
   const dispatch = useDispatch();
 
-  if(err) console.log(err.response.data.detail);
-
   return(
     <div>
       Register As A Developer
+
       <form onSubmit={e => handleSubmit(e, formVals, registerDev, dispatch)}>
 
         {
@@ -81,7 +80,7 @@ const RegisterDeveloper = () => {
           <input type="checkbox" name="stack_stack" value="JAVASCRIPT" />JAVASCRIPT    
         </fieldset>      
 
-        <button onClick={e => handleSubmit(e, formVals, registerDev, dispatch)}>Register</button>
+        <button type='submit'>Register</button>
       </form>
     </div>
   )

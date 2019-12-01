@@ -56,3 +56,8 @@ export const blankDeveloperForm = {
   "rate": 20.0,
   "available": true
 }
+
+export const blankLoginForm = {
+  email: "",
+  password: ""
+}

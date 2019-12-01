@@ -1,6 +1,8 @@
 import {
   REGISTER_DEV,
-  REGISTER_ERROR
+  REGISTER_ERROR,
+  LOGIN_DEV,
+  LOGIN_ERROR
 } from '../../actions';
 
 const initialState = {
@@ -24,6 +26,19 @@ export const devReducer = (state = initialState, action) => {
           ...state,
           err: action.payload
         }
+
+    case LOGIN_DEV:
+      return {
+        ...state,
+        developer: action.payload,
+        err: null
+      }
+
+    case LOGIN_ERROR:
+      return {
+        ...state,
+        err: action.payload
+      }
 
     default:
       return { ...state }
