@@ -1,10 +1,12 @@
 import {
-  REGISTER_DEV
+  REGISTER_DEV,
+  REGISTER_ERROR
 } from '../../actions';
 
 const initialState = {
   loading: false,
-  developer: {}
+  developer: {},
+  err: null
 }
 
 export const devReducer = (state = initialState, action) => {
@@ -15,6 +17,12 @@ export const devReducer = (state = initialState, action) => {
         ...state,
         developer: action.payload
       }
+
+    case REGISTER_ERROR:
+        return {
+          ...state,
+          err: action.payload
+        }
 
     default:
       return { ...state }

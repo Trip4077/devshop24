@@ -5,11 +5,11 @@ import { registerDev } from './actions';
 import './App.css';
 
 function App() {
-  const developer = useSelector(state => state.devReducer.developer);
+  const developer = useSelector(state => state.devReducer);
   const dispatch = useDispatch();
   console.log(developer);
   const newDev = {
-    "email": "redux@gmail.com",
+    "email": "redux3@gmail.com",
     "first_name": "Ev",
     "last_name": "Eloper",
     "password": "password123",
