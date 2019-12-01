@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { registerDev } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { blankDeveloperForm, handleChange, handleChangeCheckbox, handleSubmit } from '../components/forms/formHandlers';
@@ -6,7 +6,14 @@ import { blankDeveloperForm, handleChange, handleChangeCheckbox, handleSubmit } 
 const RegisterDeveloper = props => {
   const [ formVals, setFormVals ] = useState(blankDeveloperForm);
   const err = useSelector(state => state.devReducer.err);
+  const dev = useSelector(state => state.devReducer.developer);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(!err && dev.id) {
+      props.history.push('/dev/login');
+    }
+  });
   
   return(
     <div>

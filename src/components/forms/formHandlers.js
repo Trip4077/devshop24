@@ -10,12 +10,6 @@ export const handleChange = (e, values, setValues) => {
 export const handleSubmit = (e, submission, reduxFn, dispatch, history, error) => {
   e.preventDefault();
   dispatch(reduxFn(submission))
-
-  setTimeout(() => {
-      if(localStorage.getItem('token')) {
-        history.push('/home')
-      }
-    }, 1000);
 }
 
 export const handleChangeCheckbox = (e, values, setValues) => {
