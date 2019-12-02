@@ -6,6 +6,7 @@ import RegisterDeveloper from './views/RegiserDeveloper';
 import LoginDeveloper from './views/LoginDeveloper';
 
 import RegisterClient from './views/RegisterClient';
+import LoginClient from './views/LoginClient';
 
 import { Route } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ function App() {
         <Route exact path='/dev/login' render={props => <LoginDeveloper {...props} />} />
 
         <Route exact path='/client/register' render={props => <RegisterClient {...props} />} />
-        {/* <Route exact path='/dev/login' render={props => <LoginDeveloper {...props} />} /> */}
+        <Route exact path='/client/login' render={props => <LoginClient {...props} />} />
       </header>
     </div>
   );

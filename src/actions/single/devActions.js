@@ -14,9 +14,11 @@ export const registerDev = developer => dispatch => {
        .catch(err => {
          dispatch({ type: REGISTER_ERROR, payload: err });
        });
+
 }
 
 export const loginDev = login => dispatch => {
+  
   axios.post('https://dev-shop-24-api.herokuapp.com/api/devs/login', login)
        .then(res => {
          localStorage.setItem('token', res.data.token);
