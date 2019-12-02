@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Landing from './views/Landing';
+import Home from './views/Home';
 
 import RegisterDeveloper from './views/authentication/RegiserDeveloper';
 import LoginDeveloper from './views/authentication/LoginDeveloper';
@@ -23,6 +24,8 @@ function App() {
 
         <Route exact path='/client/register' render={props => <RegisterClient {...props} />} />
         <Route exact path='/client/login' render={props => <LoginClient {...props} />} />
+
+        <Route exact path='/home' component={Home} />
       </header>
     </div>
   );

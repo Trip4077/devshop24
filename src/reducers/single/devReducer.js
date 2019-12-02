@@ -1,13 +1,14 @@
 import {
   REGISTER_DEV,
-  REGISTER_ERROR,
   LOGIN_DEV,
-  LOGIN_ERROR
+  ERROR,
+  GET_CLIENTS
 } from '../../actions';
 
 const initialState = {
   loading: false,
   developer: {},
+  clients: [],
   err: null
 }
 
@@ -21,12 +22,6 @@ export const devReducer = (state = initialState, action) => {
         err: null
       }
 
-    case REGISTER_ERROR:
-        return {
-          ...state,
-          err: action.payload
-        }
-
     case LOGIN_DEV:
       return {
         ...state,
@@ -34,12 +29,19 @@ export const devReducer = (state = initialState, action) => {
         err: null
       }
 
-    case LOGIN_ERROR:
+    case GET_CLIENTS:
       return {
         ...state,
-        err: action.payload
+        clients: action.payload,
+        err: null
       }
 
+    case ERROR:
+        return {
+          ...state,
+          err: action.payload
+        }
+    
     default:
       return { ...state }
   }
