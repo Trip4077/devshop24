@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { loginClient } from '../actions';
+import { loginDev } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankLoginForm, handleChange, handleSubmit } from '../components/forms/formHandlers';
+import { blankLoginForm, handleChange, handleSubmit } from '../../components/forms/formHandlers';
 
-const LoginClient = props => {
+const LoginDeveloper = props => {
   const [ loginVals, setLoginVals ] = useState(blankLoginForm);
-  const err = useSelector(state => state.clientReducer.err);
-  const client = useSelector(state => state.clientReducer.client);
+  const err = useSelector(state => state.devReducer.err);
+  const dev = useSelector(state => state.devReducer.developer);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,9 +17,9 @@ const LoginClient = props => {
 
   return(
     <div>
-      Login As A Client
+      Login As A Developer
 
-      <form onSubmit={e => handleSubmit(e, loginVals, loginClient, dispatch)}>
+      <form onSubmit={e => handleSubmit(e, loginVals, loginDev, dispatch)}>
         
         {
           err ? <p>{err.response.data.err}</p> : null
@@ -33,7 +33,7 @@ const LoginClient = props => {
                 required
         />
 
-        <label>Password:</label>
+        <label>Email:</label>
         <input  name='password'
                 value={ loginVals.password }
                 onChange={e => handleChange(e, loginVals, setLoginVals)}
@@ -47,4 +47,4 @@ const LoginClient = props => {
   )
 }
 
-export default LoginClient;
+export default LoginDeveloper;

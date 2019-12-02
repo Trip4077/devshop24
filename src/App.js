@@ -2,11 +2,11 @@ import React from 'react';
 
 import Landing from './views/Landing';
 
-import RegisterDeveloper from './views/RegiserDeveloper';
-import LoginDeveloper from './views/LoginDeveloper';
+import RegisterDeveloper from './views/authentication/RegiserDeveloper';
+import LoginDeveloper from './views/authentication/LoginDeveloper';
 
-import RegisterClient from './views/RegisterClient';
-import LoginClient from './views/LoginClient';
+import RegisterClient from './views/authentication/RegisterClient';
+import LoginClient from './views/authentication/LoginClient';
 
 import { Route } from 'react-router-dom';
 

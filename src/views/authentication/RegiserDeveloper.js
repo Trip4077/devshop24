@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { registerDev } from '../actions';
+import { registerDev } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankDeveloperForm, handleChange, handleChangeCheckbox, handleSubmit } from '../components/forms/formHandlers';
+import { blankDeveloperForm, handleChange, handleChangeCheckbox, handleSubmit } from '../../components/forms/formHandlers';
 
 const RegisterDeveloper = props => {
   const [ formVals, setFormVals ] = useState(blankDeveloperForm);

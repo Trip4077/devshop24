@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { registerClient } from '../actions';
+import { registerClient } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankClientForm, handleChange, handleSubmit } from '../components/forms/formHandlers';
+import { blankClientForm, handleChange, handleSubmit } from '../../components/forms/formHandlers';
 
 const RegisterClient = props => {
   const [ formVals, setFormVals ] = useState(blankClientForm);
