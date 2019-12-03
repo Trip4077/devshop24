@@ -13,10 +13,16 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 
-function App() {
+function App(props) {
+  const logout = () => {
+    localStorage.clear()
+    window.location.replace('/')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
+        <button onClick={logout}>Log Out</button>
         <Route exact path='/' component={Landing} />
 
         <Route exact path='/dev/register' render={props => <RegisterDeveloper {...props} />} />

@@ -7,19 +7,11 @@ const Home = () => {
 
   if(role === 'dev') {
 
-    return(
-      <div>
-        <ClientList />
-      </div>
-    )
+    return <ClientList />
 
   } else if(role === 'client') {
 
-    return(
-      <div>
-        <DevList />
-      </div>
-    )
+    return <DevList />
 
   } else {
 
