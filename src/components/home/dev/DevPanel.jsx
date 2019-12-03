@@ -1,8 +1,8 @@
 import React from 'react';
-import { setDevs } from '../../actions';
 import { useDispatch } from 'react-redux';
-import { filterByTitle, filterByAvailable } from '../../helper/filter';
-import { sortAlphabet, sortAlphabetReverse, sortRateLow, sortRateHigh } from '../../helper/sort';
+import { setDevs } from '../../../actions';
+import { filterByTitle, filterByAvailable } from '../../../helper/filter';
+import { sortAlphabet, sortAlphabetReverse, sortRateLow, sortRateHigh } from '../../../helper/sort';
 
 const DevPanel = props => {
   const dispatch = useDispatch();

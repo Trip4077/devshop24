@@ -1,6 +1,6 @@
 import React from 'react';
-import ClientList from '../components/home/ClientList';
-import DevList from '../components/home/DevList';
+import ClientList from '../components/home/client/ClientList';
+import DevList from '../components/home/dev/DevList';
 
 const Home = () => {
   const role = localStorage.getItem('role');

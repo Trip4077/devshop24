@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getAllClients } from '../../actions';
+import { getAllClients } from '../../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 const ClientList = props => {
