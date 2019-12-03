@@ -3,12 +3,14 @@ import {
   LOGIN_CLIENT,
   GET_DEVS,
   SET_DEVS,
+  GET_DEV,
   ERROR
 } from '../../actions';
 
 const initialState = {
   loading: false,
   client: {},
+  current: {},
   devs: [],
   allDevs: [],
   err: null
@@ -44,6 +46,13 @@ export const clientReducer = (state = initialState, action) => {
         ...state,
         devs: action.payload
       }
+
+    case GET_DEV:
+        return {
+          ...state,
+          current: action.payload,
+          err: null
+        }
 
     case ERROR:
         return {

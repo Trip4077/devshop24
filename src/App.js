@@ -1,19 +1,19 @@
 import React from 'react';
 
-import Landing from './views/Landing';
 import Home from './views/Home';
+import Landing from './views/Landing';
+import DevProfile from './views/DevProfile';
 
 import RegisterDeveloper from './views/authentication/RegiserDeveloper';
-import LoginDeveloper from './views/authentication/LoginDeveloper';
-
 import RegisterClient from './views/authentication/RegisterClient';
+import LoginDeveloper from './views/authentication/LoginDeveloper';
 import LoginClient from './views/authentication/LoginClient';
 
 import { Route } from 'react-router-dom';
 
 import './App.css';
 
-function App(props) {
+function App() {
   const logout = () => {
     localStorage.clear()
     window.location.replace('/')
@@ -27,6 +27,7 @@ function App(props) {
 
         <Route exact path='/dev/register' render={props => <RegisterDeveloper {...props} />} />
         <Route exact path='/dev/login' render={props => <LoginDeveloper {...props} />} />
+        <Route exact path='/dev/:id' render={props => <DevProfile {...props} />} />
 
         <Route exact path='/client/register' render={props => <RegisterClient {...props} />} />
         <Route exact path='/client/login' render={props => <LoginClient {...props} />} />
