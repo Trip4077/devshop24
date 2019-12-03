@@ -2,6 +2,7 @@ import React from 'react';
 import { userTeamSwitch } from '../../helper/switch';
 
 const UserTeams = props => {
+  console.log(props)
   return (
     <div>
       {

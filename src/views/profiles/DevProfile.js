@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { getDev, getAllTeams } from '../actions';
+import { getDev, getAllTeams } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
-import DevInfo from '../components/profile/devInfo';
-import UserTeams from '../components/profile/userTeams';
+import DevInfo from '../../components/profile/devInfo';
+import UserTeams from '../../components/profile/userTeams';
 
 const DevProfile = props => {
   const dev = useSelector(state => state.clientReducer.current);

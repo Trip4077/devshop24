@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DevCard = props => {
   return(
-    <Link to={`/dev/${props.dev.id}`}>
+    <Link to={`/dev/profile/${props.dev.id}`}>
       <div style={{margin: "0 25px"}}>
         <h2>{props.dev.first_name} {props.dev.last_name}</h2>
         <h3>{props.dev.title}</h3>

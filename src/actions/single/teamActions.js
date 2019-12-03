@@ -7,7 +7,6 @@ export const getAllTeams = () => dispatch => {
 
   axios.get('https://dev-shop-24-api.herokuapp.com/api/teams/')
        .then(res => {
-        console.log(res);
         dispatch({ type: GET_TEAMS, payload: res.data });
        })
        .catch(err => {

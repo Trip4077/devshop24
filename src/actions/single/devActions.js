@@ -4,6 +4,7 @@ export const REGISTER_DEV  = "REGISTER_DEV";
 export const LOGIN_DEV = "LOGIN_DEV";
 export const GET_CLIENTS = "GET_CLIENTS";
 export const SET_CLIENTS = "SET_CLIENTS";
+export const GET_CLIENT = "GET_CLIENT";
 export const ERROR  = "ERROR";
 
 export const registerDev = developer => dispatch => {
@@ -47,4 +48,15 @@ export const getAllClients = () => dispatch => {
 
 export const setClients = list => dispatch => {
   dispatch({ type: SET_CLIENTS, payload: list });
+}
+
+export const getClient = id => dispatch => {
+  axios.get(`https://dev-shop-24-api.herokuapp.com/api/clients/${id}`)
+       .then(res => {
+         console.log(res)
+         dispatch({ type: GET_CLIENT, payload: res.data });
+       })
+       .catch(err => {
+         dispatch({ type: ERROR, payload: err });
+       });
 }
