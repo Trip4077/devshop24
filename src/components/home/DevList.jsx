@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
-import { getAllDevs } from '../../actions';
+import { getAllDevs, setDevs } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
+
+import Search from './Search';
+
+import DevPanel from './DevPanel';
+import DevCard from './DevCard';
 
 const ClientList = props => {
   const dispatch = useDispatch();
   const devs = useSelector(state => state.clientReducer.devs);
+  const allDevs = useSelector(state => state.clientReducer.allDevs);
 
   useEffect(() => {
     dispatch(getAllDevs())
@@ -13,27 +19,17 @@ const ClientList = props => {
   return(
     <>
       <h2>Registered Developers:</h2>
+      <h3>Results: {devs.length}</h3>
+      <Search arr={allDevs} action={setDevs} />
+      <DevPanel devs={devs} allDevs={allDevs} />
+
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", alignItems: "center" }}>
         {
           devs.map(dev => {
             const stack = dev.tech_stack.split(' ')
 
             return (
-              <div style={{margin: "0 25px"}}>
-                <h2>{dev.first_name} {dev.last_name}</h2>
-                <h3>{dev.title}</h3>
-
-                <p>${dev.rate}.00/hr</p> 
-
-                <div>
-                  {stack.map(skill => <p>{skill}</p>)}
-                </div>
-
-                <address>
-                  <p>{dev.email}</p>
-                  <p>{dev.phone}</p>
-                </address>
-              </div>
+              <DevCard dev={dev} stack={stack} />
             )
           })
         }

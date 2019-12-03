@@ -3,6 +3,7 @@ import axios from 'axios';
 export const REGISTER_CLIENT = "REGISTER_CLIENT";
 export const LOGIN_CLIENT = "LOGIN_CLIENT";
 export const GET_DEVS = "GET_DEVS";
+export const SET_DEVS = "SET_DEVS";
 export const ERROR = "ERROR";
 
 export const registerClient = client => dispatch => {
@@ -42,4 +43,8 @@ export const getAllDevs = () => dispatch => {
          dispatch({ type: ERROR, payload: err });
        })
 
+}
+
+export const setDevs = list => dispatch => {
+  dispatch({ type: SET_DEVS, payload: list });
 }
