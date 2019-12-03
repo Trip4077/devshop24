@@ -34,3 +34,16 @@ export const sortRateHigh = arr => {
   });
 
 }
+
+export const sortCompany = arr => {
+
+  return [ ...arr ].sort((a, b) => a.company.localeCompare(b.company));
+
+}
+
+export const sortCompanyReverse = arr => {
+
+  return [ ...arr ].sort((a, b) => a.company.localeCompare(b.company))
+                   .reverse();
+
+}

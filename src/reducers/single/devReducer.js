@@ -2,13 +2,15 @@ import {
   REGISTER_DEV,
   LOGIN_DEV,
   ERROR,
-  GET_CLIENTS
+  GET_CLIENTS,
+  SET_CLIENTS
 } from '../../actions';
 
 const initialState = {
   loading: false,
   developer: {},
   clients: [],
+  allClients: [],
   err: null
 }
 
@@ -33,7 +35,14 @@ export const devReducer = (state = initialState, action) => {
       return {
         ...state,
         clients: action.payload,
+        allClients: action.payload,
         err: null
+      }
+
+    case SET_CLIENTS:
+      return {
+        ...state,
+        clients: action.payload
       }
 
     case ERROR:
