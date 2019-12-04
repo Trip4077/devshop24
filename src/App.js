@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Nav from './components/nav/nav';
 import Home from './views/Home';
 import Landing from './views/Landing';
 import DevProfile from './views/profiles/DevProfile';
@@ -15,15 +16,11 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const logout = () => {
-    localStorage.clear()
-    window.location.replace('/')
-  }
-
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={logout}>Log Out</button>
+        <Nav />
+
         <Route exact path='/' component={Landing} />
 
         <Route exact path='/dev/register' render={props => <RegisterDeveloper {...props} />} />

@@ -22,7 +22,7 @@ const LoginDeveloper = props => {
       <form onSubmit={e => handleSubmit(e, loginVals, loginDev, dispatch)}>
         
         {
-          err ? <p>{err.response.data.err}</p> : null
+          err ? <p>{err}</p> : null
         }
 
         <label>Email:</label>
