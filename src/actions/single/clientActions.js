@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const REGISTER_CLIENT = "REGISTER_CLIENT";
 export const LOGIN_CLIENT = "LOGIN_CLIENT";
+export const UPDATE_CLIENT = "UPDATE_CLIENT";
 export const GET_DEVS = "GET_DEVS";
 export const SET_DEVS = "SET_DEVS";
 export const GET_DEV = "GET_DEV";
@@ -60,4 +61,14 @@ export const getDev = id => dispatch => {
          dispatch({ type: ERROR, payload: err });
        });
 
+}
+
+export const updateClient = (id, update) => dispatch => {
+  axios.put(`https://dev-shop-24-api.herokuapp.com/api/clients/${id}`, update)
+       .then(res => {
+         dispatch({ type: UPDATE_CLIENT, payload: res.data });
+       })
+       .catch(err => {
+        dispatch({ type: ERROR, payload: err });
+       });
 }

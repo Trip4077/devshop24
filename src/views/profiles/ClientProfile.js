@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getClient, getAllTeams } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -7,6 +8,7 @@ import UserTeams from '../../components/profile/userTeams';
 
 const ClientProfile = props => {
   const client = useSelector(state => state.devReducer.client);
+  const user = useSelector(state => state.clientReducer.client);
   const teams = useSelector(state => state.teamReducer.teams);
   const dispatch = useDispatch();
 
@@ -17,6 +19,10 @@ const ClientProfile = props => {
 
   return(
     <div>
+      {
+        client.id === user.id ? <Link to={`/client/profile/${client.id}/settings`}> Update Info </Link> 
+                           : null
+      }
       <ClientInfo client={client} />
       <UserTeams teams={teams} client={client} />
     </div>

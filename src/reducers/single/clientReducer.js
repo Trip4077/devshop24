@@ -1,6 +1,7 @@
 import {
   REGISTER_CLIENT,
   LOGIN_CLIENT,
+  UPDATE_CLIENT,
   GET_DEVS,
   SET_DEVS,
   GET_DEV,
@@ -32,6 +33,13 @@ export const clientReducer = (state = initialState, action) => {
         client: action.payload,
         err: null
       }
+
+    case UPDATE_CLIENT:
+        return {
+          ...state,
+          client: action.payload,
+          err: null
+        }
     
     case GET_DEVS:
         return {

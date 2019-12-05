@@ -33,7 +33,7 @@ const LoginDeveloper = props => {
                 required
         />
 
-        <label>Email:</label>
+        <label>Password:</label>
         <input  name='password'
                 value={ loginVals.password }
                 onChange={e => handleChange(e, loginVals, setLoginVals)}

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const REGISTER_DEV  = "REGISTER_DEV";
 export const LOGIN_DEV = "LOGIN_DEV";
+export const UPDATE_DEV = "UPDATE_DEV";
 export const GET_CLIENTS = "GET_CLIENTS";
 export const SET_CLIENTS = "SET_CLIENTS";
 export const GET_CLIENT = "GET_CLIENT";
@@ -58,5 +59,15 @@ export const getClient = id => dispatch => {
        })
        .catch(err => {
          dispatch({ type: ERROR, payload: err });
+       });
+}
+
+export const updateDev = (id, update) => dispatch => {
+  axios.put(`https://dev-shop-24-api.herokuapp.com/api/devs/${id}`, update)
+       .then(res => {
+         dispatch({ type: UPDATE_DEV, payload: res.data });
+       })
+       .catch(err => {
+        dispatch({ type: ERROR, payload: err });
        });
 }
