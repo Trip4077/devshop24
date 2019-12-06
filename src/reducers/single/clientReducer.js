@@ -5,6 +5,7 @@ import {
   GET_DEVS,
   SET_DEVS,
   GET_DEV,
+  LOGOUT,
   ERROR
 } from '../../actions';
 
@@ -61,6 +62,9 @@ export const clientReducer = (state = initialState, action) => {
           current: action.payload,
           err: null
         }
+
+    case LOGOUT:
+      return { ...initialState }
 
     case ERROR:
         return {

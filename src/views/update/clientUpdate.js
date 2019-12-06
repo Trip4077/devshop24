@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateClient } from '../../actions';
+import { updateClient, deleteClient } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleChange } from '../../components/forms/formHandlers';
 
@@ -13,6 +13,12 @@ const ClientUpdate = props => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(updateClient(client.id, { ...client, ...updateVals }));
+  }
+
+  const logout = () => {
+    dispatch(deleteClient(client.id));
+    localStorage.clear();
+    props.history.push('/');
   }
 
   return(
@@ -47,6 +53,8 @@ const ClientUpdate = props => {
           Save Changes
         </button>
       </form>
+
+      <button onClick={logout}>Delete Account</button>
     </div>
   )
 }
