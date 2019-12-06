@@ -9,6 +9,9 @@ import ClientProfile from './views/profiles/ClientProfile';
 import UpdateDev from './views/update/updateDev';
 import ClientUpdate from './views/update/clientUpdate';
 
+import Browse from './views/browse/Browse';
+import BrowseTeams from './views/browse/BrowseTeams';
+
 import RegisterDeveloper from './views/authentication/RegiserDeveloper';
 import RegisterClient from './views/authentication/RegisterClient';
 import LoginDeveloper from './views/authentication/LoginDeveloper';
@@ -37,6 +40,8 @@ function App() {
         <Route exact path='/client/profile/:id/settings' render={props => <ClientUpdate {...props} />} />
 
         <Route exact path='/home' render={props => <Home {...props} />} />
+        <Route exact path='/browse' render={props => <Browse {...props} />} />
+        <Route exact path='/browse/teams' render={props => <BrowseTeams {...props} />} />
       </header>
     </div>
   );
