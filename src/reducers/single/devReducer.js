@@ -2,6 +2,7 @@ import {
   REGISTER_DEV,
   LOGIN_DEV,
   UPDATE_DEV,
+  LOGOUT,
   ERROR,
   GET_CLIENTS,
   SET_CLIENTS,
@@ -59,7 +60,13 @@ export const devReducer = (state = initialState, action) => {
       return {
         ...state,
         client: action.payload,
-        err: null
+        err:
+         null
+      }
+
+    case LOGOUT:
+      return {
+        ...initialState
       }
 
     case ERROR:

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateDev } from '../../actions';
+import { updateDev, deleteDev } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleChange, handleChangeCheckbox } from '../../components/forms/formHandlers';
 
@@ -12,6 +12,12 @@ const UpdateDev = props => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(updateDev(dev.id, { ...dev, ...updateVals }));
+  }
+
+  const logout = () => {
+    dispatch(deleteDev(dev.id));
+    localStorage.clear()
+    props.history.push('/');
   }
 
   return(
@@ -74,6 +80,8 @@ const UpdateDev = props => {
 
         <button type='submit'>SAVE CHANGES</button>
       </form>
+
+      <button onClick={logout}>Delete Account</button>
     </div>
   )
 }
