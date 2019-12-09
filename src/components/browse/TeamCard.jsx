@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TeamCard = props => {
+  console.log('TEAM CARD', props);
   return(
     <div>
       <h3>{props.team.project_title}</h3>

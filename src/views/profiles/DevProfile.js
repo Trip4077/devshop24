@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getDev, getAllTeams } from '../../actions';
+import { getDev } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 import DevInfo from '../../components/profile/devInfo';
@@ -14,7 +14,6 @@ const DevProfile = props => {
 
   useEffect(() => {
     dispatch(getDev(props.match.params.id));
-    dispatch(getAllTeams());
   }, []);
 
   let stack = [];

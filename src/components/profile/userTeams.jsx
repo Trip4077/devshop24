@@ -1,13 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { userTeamSwitch } from '../../helper/switch';
 
 const UserTeams = props => {
-  console.log(props)
+  const devs = useSelector(state => state.clientReducer.allDevs);
+  const clients = useSelector(state => state.devReducer.allClients);
+
   return (
     <div>
       {
-        props.dev ? userTeamSwitch(props.teams, props.dev)
-                  : userTeamSwitch(props.teams, false, props.client)
+        props.dev ? userTeamSwitch(props.teams, props.dev, false, devs, clients)
+                  : userTeamSwitch(props.teams, false, props.client, devs, clients)
       }
     </div>
   )

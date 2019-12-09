@@ -25,7 +25,7 @@ const TeamBuilder = props => {
       "ui_id": Number(formVals.ui_id),
       "devops_id": Number(formVals.devops_id)
     }
-    console.log(submission)
+
     handleSubmit(e, submission, addTeam, dispatch)
   }
 
