@@ -58,8 +58,8 @@ export const blankDeveloperForm = {
 }
 
 export const blankLoginForm = {
-  email: "",
-  password: ""
+  "email": "",
+  "password": ""
 }
 
 export const blankClientForm = {
@@ -69,4 +69,13 @@ export const blankClientForm = {
     "company": "",
     "phone": "",
     "password": ""
+}
+
+export const blankTeamForm = {
+  "client_id": "",
+  "project_id": "",
+  "frontend_id": "",
+  "backend_id": "",
+  "ui_id": "",
+  "devops_id": ""
 }
