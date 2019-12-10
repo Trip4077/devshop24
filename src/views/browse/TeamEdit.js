@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import { addTeam } from '../../actions';
+import { editTeam } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankTeamForm, handleChange, handleSubmit } from '../../components/forms/formHandlers';
+import { blankTeamForm, handleChange } from '../../components/forms/formHandlers';
 
-const TeamBuilder = props => {
+const TeamEdit = props => {
   const devs = useSelector(state => state.clientReducer.allDevs);
   const client = useSelector(state => state.clientReducer.client);
+  const team = useSelector(state => state.teamReducer.allTeams).filter(team => team.id === Number(props.match.params.id))[0];
   const dispatch = useDispatch()
-
+  console.log(team)
   const [ formVals, setFormVals ] = useState({
-    ...blankTeamForm,
-    project_id: 3,
-    client_id: client.id
+    project_id: team.p_id,
+    client_id: client.id,
+    frontend_id: team.f_id,
+    backend_id: team.b_id,
+    ui_id: team.u_id,
+    devops_id: team.d_id
   });
 
-  const convertThenSubmit = (e) => {
+  const convertThenSubmit = e => {
     e.preventDefault();
 
     const submission = {
@@ -25,13 +29,13 @@ const TeamBuilder = props => {
       "ui_id": Number(formVals.ui_id),
       "devops_id": Number(formVals.devops_id)
     }
-
-    handleSubmit(e, submission, addTeam, dispatch)
+    console.log(submission)
+    dispatch(editTeam(props.match.params.id, submission))
   }
 
   return(
     <div>
-      Build Your Team:
+      Edit Your Team:
 
       <form onSubmit={convertThenSubmit}>
         <label>
@@ -104,4 +108,4 @@ const TeamBuilder = props => {
   )
 }
 
-export default TeamBuilder;
+export default TeamEdit;

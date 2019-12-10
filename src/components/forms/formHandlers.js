@@ -7,7 +7,7 @@ export const handleChange = (e, values, setValues) => {
   })
 }
 
-export const handleSubmit = (e, submission, reduxFn, dispatch, history, error) => {
+export const handleSubmit = (e, submission, reduxFn, dispatch, id) => {
   e.preventDefault();
   dispatch(reduxFn(submission))
 }
