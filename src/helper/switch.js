@@ -40,7 +40,7 @@ export const userTeamSwitch = (teams=[], dev=false, client=false, devs, clients)
         <>
           <h2>{client.first_name}'s Results:</h2>
           {
-            teams.length ? clientList.map(team => <TeamCard team={team} />)
+            teams.length ? clientList.map(team => <TeamCard team={team} client />)
                          : null
           }
         </>

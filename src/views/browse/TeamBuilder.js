@@ -10,7 +10,7 @@ const TeamBuilder = props => {
 
   const [ formVals, setFormVals ] = useState({
     ...blankTeamForm,
-    project_id: 3,
+    project_id: props.match.params.id || 3,
     client_id: client.id
   });
 

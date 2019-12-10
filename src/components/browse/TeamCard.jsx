@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteTeam } from '../../actions';
 import { Link } from 'react-router-dom';
 
 const TeamCard = props => {
-  console.log('TEAM CARD', props);
+  const dispatch = useDispatch();
+
   return(
     <div>
       <h3>{props.team.project_title}</h3>
@@ -32,6 +35,16 @@ const TeamCard = props => {
         <p>{`DevOps Engineer: ${props.team.devops.first_name} ${props.team.devops.last_name}`}</p>
       </Link>
       <p>{`\tRate: \$${props.team.devops.rate}.00 / hr`}</p>
+
+      {
+        !props.client ? null
+                      : <Link to={`/team-builder/${props.team.id}`}>Edit</Link>
+      }
+
+      {
+        !props.client ? null
+                      : <button onClick={e => dispatch(deleteTeam(props.team.id))}>Delete</button>
+      }
     </div>
   )
 }
