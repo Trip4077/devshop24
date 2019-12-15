@@ -23,6 +23,7 @@ const Nav = () => {
   return(
     <nav>
       <Link to='/home'>Home</Link>
+      <Link to='/browse'>Browse</Link>
       <Link to={`/${role}/profile/${id}`}>profile</Link>
 
       <button onClick={logout}>Log Out</button>

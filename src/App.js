@@ -11,6 +11,8 @@ import ClientUpdate from './views/update/clientUpdate';
 
 import Browse from './views/browse/Browse';
 import BrowseTeams from './views/browse/BrowseTeams';
+import TeamBuilder from './views/browse/TeamBuilder';
+import TeamEdit from './views/browse/TeamEdit';
 
 import RegisterDeveloper from './views/authentication/RegiserDeveloper';
 import RegisterClient from './views/authentication/RegisterClient';
@@ -42,6 +44,8 @@ function App() {
         <Route exact path='/home' render={props => <Home {...props} />} />
         <Route exact path='/browse' render={props => <Browse {...props} />} />
         <Route exact path='/browse/teams' render={props => <BrowseTeams {...props} />} />
+        <Route exact path='/team-builder' render={props => <TeamBuilder {...props} />} />
+        <Route exact path='/team-builder/:id' render={props => <TeamEdit {...props} />} />
       </header>
     </div>
   );

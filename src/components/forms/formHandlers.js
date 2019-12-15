@@ -7,7 +7,7 @@ export const handleChange = (e, values, setValues) => {
   })
 }
 
-export const handleSubmit = (e, submission, reduxFn, dispatch, history, error) => {
+export const handleSubmit = (e, submission, reduxFn, dispatch, id) => {
   e.preventDefault();
   dispatch(reduxFn(submission))
 }
@@ -58,8 +58,8 @@ export const blankDeveloperForm = {
 }
 
 export const blankLoginForm = {
-  email: "",
-  password: ""
+  "email": "",
+  "password": ""
 }
 
 export const blankClientForm = {
@@ -69,4 +69,13 @@ export const blankClientForm = {
     "company": "",
     "phone": "",
     "password": ""
+}
+
+export const blankTeamForm = {
+  "client_id": "",
+  "project_id": "",
+  "frontend_id": "",
+  "backend_id": "",
+  "ui_id": "",
+  "devops_id": ""
 }

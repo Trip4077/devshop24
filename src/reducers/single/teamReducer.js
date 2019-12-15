@@ -1,5 +1,6 @@
 import {
   GET_TEAMS,
+  ADD_TEAM,
   ERROR
 } from '../../actions';
 
@@ -18,6 +19,13 @@ export const teamReducer = (state=initialState, action) => {
         ...state,
         teams: action.payload,
         allTeams: action.payload,
+        err: null
+      }
+
+    case ADD_TEAM:
+      return {
+        ...state,
+        team: action.payload,
         err: null
       }
 

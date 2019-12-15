@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ClientList from '../components/home/client/ClientList';
 import DevList from '../components/home/dev/DevList';
 
+import { useDispatch } from 'react-redux';
+import { getAllDevs, getAllTeams } from '../actions';
+
 const Home = () => {
   const role = localStorage.getItem('role');
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllDevs());
+    dispatch(getAllTeams());
+  }, []);
 
   if(role === 'dev') {
 
