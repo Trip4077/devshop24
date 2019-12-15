@@ -14,7 +14,7 @@ const BrowseProjects = () => {
       {
         projects.map(project => {
           return(
-            <Link to={`/project/${project.id}`}>
+            <Link to={`/browse/projects/${project.id}`}>
               <ProjectCard project={project} />
             </Link>
           )
