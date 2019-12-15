@@ -18,11 +18,12 @@ const BrowseTeams = props => {
       {
         localStorage.getItem('role') === 'dev' ? null 
                                                : <Link to='/team-builder'>
-                                                    Build A Team
-                                                  </Link>
+                                                  Build A Team
+                                                 </Link>
       }
 
       <h1>All Teams:</h1>
+
       {
         teamList.map(team => {
           return(
@@ -30,6 +31,7 @@ const BrowseTeams = props => {
           )
         })
       }
+
     </div>
   )
 }

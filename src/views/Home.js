@@ -3,13 +3,14 @@ import ClientList from '../components/home/client/ClientList';
 import DevList from '../components/home/dev/DevList';
 
 import { useDispatch } from 'react-redux';
-import { getAllDevs, getAllTeams } from '../actions';
+import { getAllDevs, getAllTeams, getAllProjects } from '../actions';
 
 const Home = () => {
   const role = localStorage.getItem('role');
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getAllProjects())
     dispatch(getAllDevs());
     dispatch(getAllTeams());
   }, []);
