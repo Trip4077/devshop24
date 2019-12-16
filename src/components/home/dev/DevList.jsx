@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { getAllDevs, setDevs } from '../../../actions';
+import React from 'react';
+import { setDevs } from '../../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Search from '../Search';
@@ -7,14 +7,9 @@ import Search from '../Search';
 import DevPanel from './DevPanel';
 import DevCard from './DevCard';
 
-const ClientList = props => {
-  const dispatch = useDispatch();
+const ClientList = () => {
   const devs = useSelector(state => state.clientReducer.devs);
   const allDevs = useSelector(state => state.clientReducer.allDevs);
-
-  useEffect(() => {
-    dispatch(getAllDevs())
-  }, []);
 
   return(
     <>

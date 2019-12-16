@@ -7,7 +7,7 @@ import Search from '../Search';
 import ClientCard from './ClientCard';
 import ClientPanel from './ClientPanel';
 
-const ClientList = props => {
+const ClientList = () => {
   const clients = useSelector(state => state.devReducer.clients);
   const allClients = useSelector(state => state.devReducer.allClients);
 
