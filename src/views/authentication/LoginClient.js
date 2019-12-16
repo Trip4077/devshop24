@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loginClient } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankLoginForm, handleChange, handleSubmit } from '../../components/forms/formHandlers';
+import { blankLoginForm, handleChange, handleSubmit } from '../../helper/formHandlers';
 
 const LoginClient = props => {
   const [ loginVals, setLoginVals ] = useState(blankLoginForm);

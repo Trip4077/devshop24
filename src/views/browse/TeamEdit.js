@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { editTeam } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankTeamForm, handleChange } from '../../components/forms/formHandlers';
+import { blankTeamForm, handleChange } from '../../helper/formHandlers';
 
 const TeamEdit = props => {
   const devs = useSelector(state => state.clientReducer.allDevs);
