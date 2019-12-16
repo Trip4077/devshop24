@@ -8,7 +8,7 @@ const TeamEdit = props => {
   const client = useSelector(state => state.clientReducer.client);
   const team = useSelector(state => state.teamReducer.allTeams).filter(team => team.id === Number(props.match.params.id))[0];
   const dispatch = useDispatch()
-  console.log(team)
+
   const [ formVals, setFormVals ] = useState({
     project_id: team.p_id,
     client_id: client.id,
