@@ -1,5 +1,6 @@
 import {
   GET_PROJECTS,
+  ADD_PROJECT,
   ERROR
 } from '../../actions';
 
@@ -18,6 +19,13 @@ export const projectReducer = (state=initialState, action) => {
         ...state,
         projects: action.payload,
         allProjects: action.payload,
+        err: null
+      }
+
+    case ADD_PROJECT:
+      return {
+        ...state,
+        project: action.payload,
         err: null
       }
 

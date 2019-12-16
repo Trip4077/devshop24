@@ -15,6 +15,7 @@ import BrowseTeams from './views/browse/BrowseTeams';
 
 import TeamBuilder from './views/browse/TeamBuilder';
 import TeamEdit from './views/browse/TeamEdit';
+import ProjectBuilder from './views/browse/ProjectBuilder';
 
 import ProjectInfo from './views/browse/ProjectInfo';
 
@@ -26,7 +27,6 @@ import LoginClient from './views/authentication/LoginClient';
 import { Route } from 'react-router-dom';
 
 import './App.css';
-import ProjectCard from './components/browse/ProjectCard';
 
 function App() {
   return (
@@ -55,6 +55,7 @@ function App() {
 
         <Route exact path='/team-builder' render={props => <TeamBuilder {...props} />} />
         <Route exact path='/team-builder/:id' render={props => <TeamEdit {...props} />} />
+        <Route exact path='/project-builder' render={props => <ProjectBuilder {...props} />} /> 
       </header>
     </div>
   );
