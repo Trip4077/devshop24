@@ -9,6 +9,7 @@ export const handleChange = (e, values, setValues) => {
 
 export const handleSubmit = (e, submission, reduxFn, dispatch, id) => {
   e.preventDefault();
+  console.log(submission)
   dispatch(reduxFn(submission))
 }
 
@@ -78,4 +79,12 @@ export const blankTeamForm = {
   "backend_id": "",
   "ui_id": "",
   "devops_id": ""
+}
+
+export const blankProjectForm = {
+  "title": "",
+  "budget": "",
+  "deadline": "",
+  "type": "",
+  "description": ""
 }

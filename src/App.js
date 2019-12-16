@@ -10,9 +10,14 @@ import UpdateDev from './views/update/updateDev';
 import ClientUpdate from './views/update/clientUpdate';
 
 import Browse from './views/browse/Browse';
+import BrowseProjects from './views/browse/BrowseProjects';
 import BrowseTeams from './views/browse/BrowseTeams';
+
 import TeamBuilder from './views/browse/TeamBuilder';
 import TeamEdit from './views/browse/TeamEdit';
+import ProjectBuilder from './views/browse/ProjectBuilder';
+
+import ProjectInfo from './views/browse/ProjectInfo';
 
 import RegisterDeveloper from './views/authentication/RegiserDeveloper';
 import RegisterClient from './views/authentication/RegisterClient';
@@ -42,10 +47,15 @@ function App() {
         <Route exact path='/client/profile/:id/settings' render={props => <ClientUpdate {...props} />} />
 
         <Route exact path='/home' render={props => <Home {...props} />} />
+
         <Route exact path='/browse' render={props => <Browse {...props} />} />
         <Route exact path='/browse/teams' render={props => <BrowseTeams {...props} />} />
+        <Route exact path='/browse/projects' render={props => <BrowseProjects {...props} />} />
+        <Route exact path='/browse/projects/:id' render={props => <ProjectInfo {...props} />} />
+
         <Route exact path='/team-builder' render={props => <TeamBuilder {...props} />} />
         <Route exact path='/team-builder/:id' render={props => <TeamEdit {...props} />} />
+        <Route exact path='/project-builder' render={props => <ProjectBuilder {...props} />} /> 
       </header>
     </div>
   );

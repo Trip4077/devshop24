@@ -20,7 +20,10 @@ const ClientProfile = props => {
   return(
     <div>
       {
-        client.id === user.id ? <Link to={`/client/profile/${client.id}/settings`}> Update Info </Link> 
+        client.id === user.id ? <div>
+                                  <Link to={`/client/profile/${client.id}/settings`}> Update Info </Link> 
+                                  <Link to={`/project-builder`}> Start A Project </Link> 
+                                </div>
                            : null
       }
       <ClientInfo client={client} />

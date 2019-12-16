@@ -6,11 +6,12 @@ import { blankTeamForm, handleChange, handleSubmit } from '../../components/form
 const TeamBuilder = props => {
   const devs = useSelector(state => state.clientReducer.allDevs);
   const client = useSelector(state => state.clientReducer.client);
+  const project = useSelector(state => state.projectReducer.project)
   const dispatch = useDispatch()
 
   const [ formVals, setFormVals ] = useState({
     ...blankTeamForm,
-    project_id: 3,
+    project_id: project.id,
     client_id: client.id
   });
 
@@ -38,7 +39,7 @@ const TeamBuilder = props => {
           UI/UX:
         </label>
         <select onChange={e => handleChange(e, formVals, setFormVals)} name="ui_id">
-          <option>---Select Deveoper---</option>
+          <option>---Select Developer---</option>
           {
             devs.map(dev => {
               return (
@@ -54,7 +55,7 @@ const TeamBuilder = props => {
           Front End:
         </label>
         <select onChange={e => handleChange(e, formVals, setFormVals)} name="frontend_id">
-          <option>---Select Deveoper---</option>
+          <option>---Select Developer---</option>
           {
             devs.map(dev => {
               return(
@@ -70,7 +71,7 @@ const TeamBuilder = props => {
           Back End:
         </label>
         <select onChange={e => handleChange(e, formVals, setFormVals)} name="backend_id">
-          <option>---Select Deveoper---</option>
+          <option>---Select Developer---</option>
           {
             devs.map(dev => {
               return(
@@ -86,7 +87,7 @@ const TeamBuilder = props => {
           Dev Ops:
         </label>
         <select onChange={e => handleChange(e, formVals, setFormVals)} name="devops_id">
-          <option>---Select Deveoper---</option>
+          <option>---Select Developer---</option>
           {
             devs.map(dev => {
               return(
