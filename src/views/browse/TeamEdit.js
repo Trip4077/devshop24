@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { editTeam } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankTeamForm, handleChange } from '../../components/forms/formHandlers';
+import { blankTeamForm, handleChange } from '../../helper/formHandlers';
 
 const TeamEdit = props => {
   const devs = useSelector(state => state.clientReducer.allDevs);
   const client = useSelector(state => state.clientReducer.client);
   const team = useSelector(state => state.teamReducer.allTeams).filter(team => team.id === Number(props.match.params.id))[0];
   const dispatch = useDispatch()
-  console.log(team)
+
   const [ formVals, setFormVals ] = useState({
     project_id: team.p_id,
     client_id: client.id,

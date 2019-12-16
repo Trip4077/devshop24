@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { getDev } from '../../actions';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import DevInfo from '../../components/profile/devInfo';
 import UserTeams from '../../components/profile/userTeams';
 
 const DevProfile = props => {
-  const dev = useSelector(state => state.clientReducer.current);
+  const dev = useSelector(state => state.clientReducer.allDevs)
+              .filter(dev => Number( props.match.params.id ) === dev.id )[0];
+
   const user = useSelector(state => state.devReducer.developer);
   const teams = useSelector(state => state.teamReducer.teams);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getDev(props.match.params.id));
-  }, []);
 
   let stack = [];
 

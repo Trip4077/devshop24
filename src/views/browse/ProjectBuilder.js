@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { addProject } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { blankProjectForm, handleChange, handleSubmit } from '../../components/forms/formHandlers';
+import { blankProjectForm, handleChange, handleSubmit } from '../../helper/formHandlers';
 
 const ProjectBuilder = props =>{
   const [ formVals, setFormVals ] = useState(blankProjectForm);

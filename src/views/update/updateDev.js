@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { updateDev, deleteDev } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleChange, handleChangeCheckbox } from '../../components/forms/formHandlers';
+import { handleChange, handleChangeCheckbox } from '../../helper/formHandlers';
 
 const UpdateDev = props => {
   const [ updateVals, setUpdateVals ] = useState({});

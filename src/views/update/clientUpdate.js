@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { updateClient, deleteClient } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleChange } from '../../components/forms/formHandlers';
+import { handleChange } from '../../helper/formHandlers';
 
 const ClientUpdate = props => {
   const [ updateVals, setUpdateVals ] = useState({});
